@@ -13,4 +13,5 @@ export type Grupo = {
 
 export const GRUPOS: Grupo[] = [
   { id: "1", nombre: "Stickers #1", foto: "/images/1.webp", categoria: "Stickers", disponible: true },
+    enlace: "https://chat.whatsapp.com/GtsRyfVgS75AYSmF9ZyDqC?s=cl&p=i&iam=2",
 ];
