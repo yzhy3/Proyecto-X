@@ -4,8 +4,9 @@ import { useEffect } from "react";
 
 // Scripts originales del sitio (public/js). Son imperativos: buscan elementos
 // del DOM por id/clase y los animan, así que se cargan una sola vez, en este
-// orden, cuando la página ya se hidrató.
-const SCRIPTS = [
+// orden, cuando la página ya se hidrató. Cada página pasa los que necesita;
+// si no pasa ninguno, se cargan los de la portada.
+const HOME_SCRIPTS = [
   "/js/svc-switch.js",
   "/js/nb-app.js",
   "/js/nb-hero.js",
@@ -28,13 +29,18 @@ function load(src: string) {
   });
 }
 
-export default function LegacyScripts() {
+export default function LegacyScripts({
+  scripts = HOME_SCRIPTS,
+}: {
+  scripts?: string[];
+}) {
   useEffect(() => {
     if (started) return; // evita la doble ejecución de React StrictMode en desarrollo
     started = true;
     (async () => {
-      for (const src of SCRIPTS) await load(src);
+      for (const src of scripts) await load(src);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return null;
