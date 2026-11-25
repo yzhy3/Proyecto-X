@@ -1,4 +1,4 @@
-// NamiBot · lo común de todas las páginas: sesión (la misma cuenta de NamiChats), llamadas a /api/nb, cuenta en la
+// ZenBot · lo común de todas las páginas: sesión (la misma cuenta de ZenChats), llamadas a /api/nb, cuenta en la
 // barra, menú del celular y aparecer al bajar.
 (function () {
     'use strict';
@@ -31,11 +31,11 @@
                 })
                 .catch(function () { return { _status: 0, _ok: false, error: 'Sin conexión. Revisa tu internet e intenta de nuevo.' }; });
         },
-        // Iniciar sesión: va a namilinofc.com (misma cuenta de NamiChats, con Google o correo) y vuelve aquí
+        // Iniciar sesión: va a Zenlinofc.com (misma cuenta de ZenChats, con Google o correo) y vuelve aquí
         login: function (after) {
             try { sessionStorage.setItem('nb:after', after || (location.pathname + location.search)); } catch (e) {}
             var back = after || (location.pathname + location.search);
-            NB.api('/api/nb/login-url').then(function (j) { location.href = (j.url || 'https://namilinofc.com/cuenta/namibots') + '?volver=' + encodeURIComponent(back); });
+            NB.api('/api/nb/login-url').then(function (j) { location.href = (j.url || 'https://Zenlinofc.com/cuenta/Zenbots') + '?volver=' + encodeURIComponent(back); });
         },
         initial: function (u) { var n = String((u && (u.name || u.email)) || '?').trim(); return n.charAt(0).toUpperCase(); },
         // Grupo: su foto de perfil (la trae su bot) sobre sus iniciales en un color propio del nombre; si la foto no
@@ -51,7 +51,7 @@
         }
     };
 
-    // ---------- Estadísticas (panel admin → NamiBots): visitas, quién vio precios y pasos de la compra ----------
+    // ---------- Estadísticas (panel admin → ZenBots): visitas, quién vio precios y pasos de la compra ----------
     // id anónimo del navegador; cada cosa se avisa una vez por visita (pestaña)
     var VID = (function () {
         try { var v = localStorage.getItem('nb:vid'); if (!/^[a-z0-9]{8,32}$/.test(v || '')) { v = Math.random().toString(36).slice(2, 12) + Date.now().toString(36); localStorage.setItem('nb:vid', v); } return v; } catch (e) { return ''; }
@@ -111,7 +111,7 @@
     }
     document.addEventListener('click', function () { var a = document.querySelector('.acct.is-open'); if (a) a.classList.remove('is-open'); });
     renderAcct();
-    // Si la sesión ya no sirve (se cerró desde NamiChats, venció…), se olvida
+    // Si la sesión ya no sirve (se cerró desde ZenChats, venció…), se olvida
     if (NB.token) NB.api('/api/nb/me').then(function (j) { if (j && j.user && S) { S.user = j.user; write(S); renderAcct(); } });
 
     // ---------- Barra superior y menú del celular ----------
@@ -172,9 +172,9 @@
             '<div class="nb-canal-in">' +
             '<span class="nb-canal-wa" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="' + WA_PATH + '"/></svg></span>' +
             '<span class="nb-canal-k">Canal oficial de WhatsApp</span>' +
-            '<h2 id="nb-canal-t">Únete al canal de <span class="grad-tx">NamiBot</span></h2>' +
+            '<h2 id="nb-canal-t">Únete al canal de <span class="grad-tx">ZenBot</span></h2>' +
             '<p>Novedades, funciones nuevas y grupos gratis, directo en tu WhatsApp.</p>' +
-            '<a class="btn btn-primary nb-canal-go" href="' + CANAL + '" target="_blank" rel="noopener"><img src="/assets/img/namibot-96.webp?v=1" alt="" width="34" height="34">Unirme al canal</a>' +
+            '<a class="btn btn-primary nb-canal-go" href="' + CANAL + '" target="_blank" rel="noopener"><img src="/assets/img/Zenbot-96.webp?v=1" alt="" width="34" height="34">Unirme al canal</a>' +
             '</div>';
         document.body.appendChild(box);
         var html = document.documentElement, prevOv = html.style.overflow;

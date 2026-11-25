@@ -1,4 +1,4 @@
-// NamiBot · inicio: (1) el título se escribe letra por letra con un destello que va dejando chispas, y (2) el fondo de
+// ZenBot · inicio: (1) el título se escribe letra por letra con un destello que va dejando chispas, y (2) el fondo de
 // toda la página es de puntos que se mueven como agua: olas con el mouse y ondas al hacer clic o tocar.
 (function () {
     'use strict';

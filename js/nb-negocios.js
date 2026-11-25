@@ -1,5 +1,5 @@
-// NamiBot · formulario «NamiBot para negocios» (inicio, #negocios): la persona deja sus datos y lo que necesita;
-// llega al panel /admin (NamiBots → Negocios) y por correo, y se le escribe por WhatsApp con una propuesta.
+// ZenBot · formulario «ZenBot para negocios» (inicio, #negocios): la persona deja sus datos y lo que necesita;
+// llega al panel /admin (ZenBots → Negocios) y por correo, y se le escribe por WhatsApp con una propuesta.
 (function () {
     'use strict';
     var form = document.getElementById('biz-form');
@@ -34,7 +34,7 @@
         NB.api('/api/nb/lead', { body: d }).then(function (j) {
             btn.classList.remove('is-busy'); btn.disabled = false;
             if (!j.success) return err(j.error || 'No se pudo enviar. Intenta de nuevo.');
-            var txt = 'Hola, quiero un NamiBot para mi negocio 🤖\n' +
+            var txt = 'Hola, quiero un ZenBot para mi negocio 🤖\n' +
                 'Soy *' + d.name + '* de *' + d.business + '* (' + d.kind + ').\n' +
                 'Necesito: ' + d.need.slice(0, 600);
             document.getElementById('biz-wa').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(txt);
