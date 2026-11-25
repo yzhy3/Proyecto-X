@@ -87,7 +87,7 @@ export default function GruposPage() {
                 <div className="stk-don-cta">
                   <a
                     className="btn btn-primary"
-                    href="https://www.paypal.com/donate/?hosted_button_id=MSF3GVU8RELRS"
+                    href="https://www.paypal.com/donate/?hosted_button_id=K4DKBRWT477UN"
                     target="_blank"
                     rel="noopener"
                     data-stk-donar="paypal"
