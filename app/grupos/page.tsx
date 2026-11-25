@@ -51,7 +51,7 @@ export default function GruposPage() {
               </li>
               <li>
                 <span className="stk-n">2</span>
-                <div><b>Usa a ZenBot</b><small>Manda una foto y recibe tu sticker.</small></div>
+                <div><b>Usa a ZenBot</b><small>Usa los comandos.</small></div>
               </li>
               <li>
                 <span className="stk-n">3</span>
