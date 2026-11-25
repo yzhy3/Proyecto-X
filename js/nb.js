@@ -15,26 +15,26 @@
     var TICKS = '<svg class="tk" viewBox="0 0 18 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6l3.2 3L11 2M7.5 9 9 10.2 16.6 2"/></svg>';
     var SHIELD = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.6-7 10-4-1.4-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>';
     var wave = function () { var h = ''; for (var i = 0; i < 28; i++) h += '<i style="height:' + (20 + Math.round(Math.random() * 80)) + '%"></i>'; return h; };
-    var BOT = 'NamiBot 🩵';
+    var BOT = 'ZenBot';
 
     // Miembros del grupo (nombre, color del nombre, inicial del avatar)
     var P = {
-        andres: ['Andrés', '#53bdeb'], vale: ['Valentina', '#ff72a1'], kevin: ['Kevin', '#ffbc38'],
-        sofi: ['Sofía', '#a791ff'], mateo: ['Mateo', '#06cf9c']
+      alejandro: ['Alejandro', '#53bdeb'], vale: ['Valentina', '#ff72a1'], kevin: ['Kevin', '#ffbc38'],
+        sofi: ['Sofía', '#a791ff'],luis: ['Luis', '#06cf9c']
     };
 
     // Pasos: { k: tipo, ... }  · tipos: date, sys, admin, in (miembro), out (tú), bot, typing (pausa del bot)
     var MODES = {
         grupos: {
-            name: 'Los Reales 🫂😍', sub: 'Andrés, Valentina, Kevin, Sofía, Mateo, Tú y 31 más', av: '🫂', avBg: 'linear-gradient(135deg,#ff8a3d,#ff3d7f)',
+            name: 'Goats 🐐', sub: 'Andrés, Valentina, Kevin, Sofía,luis, Tú y 31 más', av: '🐐', avBg: 'linear-gradient(135deg,#ff8a3d,#ff3d7f)',
             start: [20, 4],
             steps: [
                 { k: 'date', t: 'HOY' },
                 { k: 'sys', t: BOT + ' se unió usando el enlace de invitación', cap: '🤖 Entra al grupo' },
-                { k: 'in', p: 'andres', t: 'y ese quién es? 👀' },
-                { k: 'in', p: 'mateo', t: 'Es el bot, denle admin por favor 🙏' },
+                { k: 'in', p: 'alejandro', t: 'y ese quién es? 👀' },
+                { k: 'in', p: 'luis', t: 'Es el bot, denle admin por favor 🙏' },
                 { k: 'admin', t: 'Tú hiciste admin a ' + BOT, cap: '🛡️ Le das admin' },
-                { k: 'bot', t: '¡Gracias por el admin! 🩵 Ya estoy activo en <b>Los Reales 🫂😍</b>. Escriban <code>.menu</code> para ver todo lo que hago.' },
+                { k: 'bot', t: '¡Gracias por el admin!  Ya estoy activo en <b>Los Reales 🫂😍</b>. Escriban <code>.menu</code> para ver todo lo que hago.' },
                 { k: 'sys', t: 'Valentina se unió usando el enlace de invitación', cap: '👋 Bienvenidas' },
                 { k: 'bot', t: '<div class="wl"><span class="wl-av" style="background:#ff72a1">V</span><div><b>¡BIENVENIDA, VALENTINA!</b><small>Los Reales 🫂😍 · ya somos 38</small></div></div>Lee las reglas con <code>.reglas</code> y preséntate 😎' },
                 { k: 'in', p: 'vale', t: 'holaaa 👋 gracias!! 🥹' },
