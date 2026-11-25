@@ -12,9 +12,5 @@ export type Grupo = {
 };
 
 export const GRUPOS: Grupo[] = [
-  { id: "4", nombre: "Stickers de TikTok 🩵 #4", foto: "/images/4.webp", categoria: "Stickers", disponible: false },
-  { id: "5", nombre: "Stickers de TikTok 🩵 #5", foto: "/images/5.webp", categoria: "Stickers", disponible: false },
-  { id: "3", nombre: "Stickers de TikTok 🩵 #3", foto: "/images/3.webp", categoria: "Stickers", disponible: false },
-  { id: "2", nombre: "Stickers de TikTok 🩵 #2", foto: "/images/2.webp", categoria: "Stickers", disponible: false },
-  { id: "1", nombre: "Stickers de TikTok 🩵 #1", foto: "/images/1.webp", categoria: "Stickers", disponible: false },
+  { id: "1", nombre: "Stickers #1", foto: "/images/1.webp", categoria: "Stickers", disponible: true },
 ];
